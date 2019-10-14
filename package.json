@@ -1,0 +1,24 @@
+{
+  "name": "mhs",
+  "version": "1.0.0",
+  "description": "Mithril visualization of HTTPS connection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo --live --open index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:Dare2python/mhs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dare2python/mhs/issues"
+  },
+  "homepage": "https://github.com/Dare2python/mhs",
+  "dependencies": {
+    "mithril": "^2.0.4"
+  }
+}
