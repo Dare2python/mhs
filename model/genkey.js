@@ -12,15 +12,19 @@ const GenKey = {
                 hash: "SHA-256",
             },
             true,
-            ["encrypt", "decrypt", "wrapKey"]
+            ["encrypt", "decrypt", "wrapKey", "unwrapKey"]
         ).then( (keyPair) => {
             GenKey.keyPair = keyPair;
-            console.log(GenKey.keyPair);
+            window.crypto.subtle.wrapKey(
+                "raw",
+                keyPair.publicKey,
+                keyPair.privateKey,
+                "AES-KW"
+            ).then( (res)=>{
+                console.log(res);
+            });
             console.log(GenKey);
 
-            crypto.subtle.exportKey("raw", keyPair.publicKey
-            ).then( (res)=> GenKey.publicKey = res );
-            GenKey.privateKey =  crypto.subtle.exportKey("raw",keyPair.privateKey);
         })
 
 };
