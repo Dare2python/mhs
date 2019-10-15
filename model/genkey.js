@@ -4,24 +4,14 @@ const GenKey = {
     publicKey: "",
     privateKey: "",
     keyPair: null,
-    generateKey: () =>
-        crypto.generateKeyPair('rsa', {
-            modulusLength: 4096,
-            publicKeyEncoding: {
-                type: 'spki',
-                format: 'pem'
-            },
-            privateKeyEncoding: {
-                type: 'pkcs8',
-                format: 'pem',
-                cipher: 'aes-256-cbc',
-                passphrase: 'top secret'
-            }
-        }, (err, publicKey, privateKey) => {
-            GenKey.publicKey = publicKey;
-            GenKey.privateKey = privateKey;
-            console.log(GenKey);
-        })
+    generateKey: () => {
+        let prime_length = 60;
+        let diffHell = crypto.createDiffieHellman(prime_length);
+        diffHell.generateKeys('base64');
+        GenKey.publicKey = diffHell.getPublicKey('base64');
+        GenKey.privateKey = diffHell.getPrivateKey('base64');
+        console.log(GenKey);
+    }
 };
 
 module.exports = GenKey;
