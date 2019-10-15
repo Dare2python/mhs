@@ -7,7 +7,7 @@ module.exports = {
             m("button.genkey", {
                 autofocus: true,
                 type: "button",
-                onclick: () => genKey.testClick()
+                onclick: () => genKey.generateKey()
             }, "gen key"),
             m("textarea[placeholder=Public Key]", {rows:5, cols:33, value:genKey.publicKey}),
             m("textarea[placeholder=Private Key]", {rows:5, cols:33, value:genKey.privateKey})
