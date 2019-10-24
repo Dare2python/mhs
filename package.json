@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "budo --live --open index.js"
+    "sbudo": "budo --live -v --open index.js",
+    "st": "webpack index.js --output bin/app.js -d --watch",
+    "start": "webpack-dev-server index.js --output bin/app.js -d --watch",
+    "build": "webpack index.js --output bin/app.js -p"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,10 @@
   "homepage": "https://github.com/Dare2python/mhs",
   "dependencies": {
     "mithril": "^2.0.4"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
   }
 }
