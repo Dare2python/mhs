@@ -8,7 +8,7 @@
 
 # production
 /build
-bin/app.js
+/dist/main.js
 
 # VSCode
 *.code-workspace
