@@ -9,7 +9,7 @@ module.exports = {
                 type: "button",
                 onclick: () => genKey.generateKey()
             }, "gen key"),
-            m("textarea[placeholder=Public Key]", {rows:5, cols:33, value:genKey.publicKey}),
-            m("textarea[placeholder=Private Key]", {rows:5, cols:33, value:genKey.privateKey})
+            m("textarea[placeholder=Public Key]", {rows:6, cols:65, value:genKey.publicKey}),
+            m("textarea[placeholder=Private Key]", {rows:15, cols:65, value:genKey.privateKey})
         ])
 };

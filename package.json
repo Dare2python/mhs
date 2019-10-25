@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "startbudo": "budo --live -v --open src/index.js",
+    "startbudo": "budo --live -v --open src/index.js:dist/main.js",
     "startwebpack": "webpack -d --watch",
     "start": "webpack-dev-server -d --watch",
     "build": "webpack -p"
@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/Dare2python/mhs",
   "dependencies": {
-    "mithril": "^2.0.4"
+    "mithril": "^2.0.4",
+    "node-forge": "^0.9.1"
   },
   "devDependencies": {
     "webpack": "^4.41.2",
