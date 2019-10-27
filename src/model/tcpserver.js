@@ -10,7 +10,11 @@ const server = net.createServer(function(socket) {
         console.log('client disconnected');
     });
 
-    socket.pipe(socket);
+    socket.on('data', function(data){
+        console.log(data);
+        const textChunk = data.toString('utf8');
+        console.log(textChunk);
+    });
 });
 
 server.on('error', (err) => {
@@ -20,5 +24,6 @@ server.on('error', (err) => {
 server.listen(PORT, '0.0.0.0',() => {
     console.log(`server bound to ${PORT}`);
 });
-// netcat 127.0.0.1 3443
+// netcat -c -v -x 127.0.0.1 3443
 // lsof -i -n -P
+// telnet 127.0.0.1 3443
