@@ -1,6 +1,21 @@
 const m = require("mithril");
 const connection = require("../model/connection");
 
+const url = 'ws://localhost:8080';
+const wsConnection = new WebSocket(url);
+
+wsConnection.onopen = () => {
+    wsConnection.send('hey')
+};
+
+wsConnection.onerror = (error) => {
+    console.log(`WebSocket error: ${error}`)
+};
+
+wsConnection.onmessage = (e) => {
+    console.log(e.data)
+};
+
 module.exports = {
     view: (vnode) =>
         m(".step2",[

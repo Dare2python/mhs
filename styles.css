@@ -60,7 +60,7 @@ button:active {
             "public private";
 }
 
-#step1 > head {
+#step1 > #head {
     grid-area: head;
 }
 
