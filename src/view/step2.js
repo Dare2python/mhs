@@ -15,7 +15,7 @@ module.exports = {
                 type: "button",
                 onclick: () => connection.send()
             }, "send"),
-            m("textarea[placeholder=client]", {rows:23, cols:30, value:connection.wsConnection}),
+            m("textarea[placeholder=client]", {rows:23, cols:30, value:connection.clientLog}),
             m("textarea[placeholder=server]", {rows:23, cols:30, value:connection.serverLog})
         ])
 };

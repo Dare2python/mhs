@@ -7,5 +7,5 @@ wss.on('connection', (ws, request) => {
     ws.on('message', (message) => {
         console.log(`${ip}:${message}`)
     });
-    ws.send('ho!');
+    ws.send((new Date()).toLocaleTimeString('ru-UA', { hour12: false }));
 });
